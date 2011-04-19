@@ -31,7 +31,7 @@ def populateFromFeed(url, secondTitle=None, firstTitle=None):
   if not firstTitle:
     firstTitle = "Channels"
 
-  dir = MediaContainer('channels-art-default.jpg', None, firstTitle, secondTitle)
+  dir = MediaContainer('art-default.jpg', None, firstTitle, secondTitle)
   dir.SetViewGroup("InfoList")
   if USE_CACHE == True:
     feed = RSS.Parse(HTTP.GetCached(url, CACHE_INTERVAL))
@@ -91,7 +91,7 @@ def HandleRequest(pathNouns, count):
   Log.Add("Handling request for paths "+(",".join(pathNouns)) )
 
   if count == 0:
-    dir = MediaContainer('channels-art-default.jpg', None, "Channels")
+    dir = MediaContainer('art-default.jpg', None, "Channels")
     dir.AppendItem(DirectoryItem("most_watched_week", "Most Watched This Week", ""))
     dir.AppendItem(DirectoryItem("most_watched_all", "Most Watched All Time", ""))
     dir.AppendItem(DirectoryItem("most_watched_month", "Most Watched This Month", ""))
